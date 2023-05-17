@@ -43,6 +43,8 @@ class MyFragment : Fragment() {
         val txt:TextView = view.findViewById(R.id.textView)
 
         txt.text = "$param1 $param2"
+
+        return view
     }
 
     companion object {
