@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -34,7 +35,14 @@ class MyFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_my, container, false)
+
+        //at fragment it is not possible to access activity's elements
+        //you must usa a View object
+        val view:View = inflater.inflate(R.layout.fragment_my, container, false)
+
+        val txt:TextView = view.findViewById(R.id.textView)
+
+        txt.text = "$param1 $param2"
     }
 
     companion object {
